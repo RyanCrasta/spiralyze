@@ -1042,6 +1042,10 @@ body {
 }
 
 @media only screen and (max-width: 1241px) {
+  .personImage {
+    object-fit: cover;
+  }
+
   #playButtonMobile {
     width: 12.5rem;
     height: 12.5rem;
