@@ -1,5 +1,5 @@
 function isTablet() {
-  if (window.matchMedia("(max-width: 761px)").matches) {
+  if (window.matchMedia("(max-width: 1241px)").matches) {
     return true;
   } else {
     return false;
