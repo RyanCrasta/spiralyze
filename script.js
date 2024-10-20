@@ -1,3 +1,11 @@
+function isTablet() {
+  if (window.matchMedia("(max-width: 761px)").matches) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 function isMobile() {
   if (window.matchMedia("(max-width: 761px)").matches) {
     return true;
@@ -83,16 +91,16 @@ images.addEventListener("transitionend", () => {
 
 autoPlayInterval = setInterval(nextSlide, 3000);
 
-const playButton = isMobile()
+const playButton = isTablet()
   ? document.getElementById("playButtonMobile")
   : document.getElementById("playButton");
 
-const video = isMobile()
+const video = isTablet()
   ? document.getElementById("myVideoMobile")
   : document.getElementById("myVideo");
 
 playButton.addEventListener("click", () => {
-  if (isMobile()) {
+  if (isTablet()) {
     document.querySelector("#playButtonMobile img").src =
       "./images/active-desktop-play-btn.png";
   } else {
