@@ -40,30 +40,26 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  overflow: hidden; /* Prevent scrolling when popup is visible */
+  overflow: hidden;
   padding: 0 1rem;
 }
 
-/* Video player styling for desktop */
 #videoPlayer {
-  /* width: 80%;  */
   max-width: 800px;
   background-color: #000;
-  border-radius: 8px; /* Rounded corners for aesthetic */
+  border-radius: 8px;
 }
 
-/* Close button styling */
 #closePopup {
   position: absolute;
-  top: 20px; /* Add spacing from top */
-  right: 20px; /* Add spacing from right */
+  top: 20px;
+  right: 20px;
   font-size: 30px;
   color: white;
   cursor: pointer;
-  z-index: 1001; /* Ensure it appears on top of the video */
+  z-index: 1001;
 }
 
-/* Popup content styling */
 .popupContent {
   position: relative;
   display: flex;
@@ -1069,6 +1065,7 @@ body {
 
   .upperHomeSection {
     padding: 0 6rem;
+    padding-top: 1.3rem;
   }
 
   .notMobile {
@@ -1120,14 +1117,9 @@ body {
   }
 
   #videoPlayer {
-    width: 100%; /* Slightly smaller width for tablets */
-    max-width: 600px; /* Max width for tablets */
-  }
-
-  /* #videoPlayer {
     width: 100%;
-    max-width: 100%;
-  } */
+    max-width: 600px;
+  }
 
   #closePopup {
     top: 10px;
@@ -1507,6 +1499,10 @@ body {
 }
 
 @media only screen and (max-width: 761px) {
+  .formCtn {
+    height: unset;
+  }
+
   #playButtonMobile {
     width: 8rem;
     height: 8rem;
@@ -1747,7 +1743,7 @@ body {
   .transpatentCurveMobile {
     display: block;
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
     left: 0;
     right: 0;
     width: 100%;
