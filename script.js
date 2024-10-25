@@ -99,6 +99,32 @@ const video = isTablet()
   ? document.getElementById("myVideoMobile")
   : document.getElementById("myVideo");
 
+const videoPopup = document.getElementById("videoPopup");
+const closePopup = document.getElementById("closePopup");
+const videoPlayer = document.getElementById("videoPlayer");
+
+playButton.addEventListener("mouseenter", () => {
+  console.log("mouseover");
+  if (isTablet()) {
+    document.querySelector("#playButtonMobile img").src =
+      "./images/active-desktop-play-btn.png";
+  } else {
+    document.querySelector("#playButton img").src =
+      "./images/active-desktop-play-btn.png";
+  }
+});
+
+playButton.addEventListener("mouseleave", () => {
+  console.log("mouseover");
+  if (isTablet()) {
+    document.querySelector("#playButtonMobile img").src =
+      "./images/passive-desktop-play-btn.png";
+  } else {
+    document.querySelector("#playButton img").src =
+      "./images/passive-desktop-play-btn.png";
+  }
+});
+
 playButton.addEventListener("click", () => {
   if (isTablet()) {
     document.querySelector("#playButtonMobile img").src =
@@ -107,8 +133,25 @@ playButton.addEventListener("click", () => {
     document.querySelector("#playButton img").src =
       "./images/active-desktop-play-btn.png";
   }
-  video.classList.add("playing");
-  video.play();
+
+  videoPopup.style.display = "flex";
+  videoPlayer.play();
+  document.body.style.overflow = "hidden";
+});
+
+closePopup.addEventListener("click", () => {
+  if (isTablet()) {
+    document.querySelector("#playButtonMobile img").src =
+      "./images/passive-desktop-play-btn.png";
+  } else {
+    document.querySelector("#playButton img").src =
+      "./images/passive-desktop-play-btn.png";
+  }
+
+  videoPopup.style.display = "none";
+  videoPlayer.pause();
+  videoPlayer.currentTime = 0;
+  document.body.style.overflow = "auto";
 });
 
 const form = document.querySelector(".submitButton");
@@ -210,6 +253,7 @@ function formInputLabelFn(
 }
 
 function formInputLabelFnBlur(event, formLabel) {
+  console.log(event.target.value);
   if (event.target.value === "") {
     document.querySelector(formLabel).style.top = "50%";
     document.querySelector(formLabel).style.left = "10px";
@@ -221,4 +265,36 @@ function formInputLabelFnBlur(event, formLabel) {
 
 document.querySelector(".hamburgerCtn").addEventListener("click", function () {
   document.querySelector(".hamburgerNavigation").classList.toggle("open");
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const buttons = document.querySelectorAll(".btnCtn");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", function (event) {
+      if (window.innerWidth <= 1241) {
+        document.querySelectorAll(".tooltiptextAboutUs").forEach((tooltip) => {
+          tooltip.style.opacity = "0";
+          tooltip.style.visibility = "hidden";
+        });
+
+        const tooltip = this.querySelector(".tooltiptextAboutUs");
+        if (tooltip) {
+          tooltip.style.opacity = "1";
+          tooltip.style.visibility = "visible";
+        }
+
+        event.stopPropagation();
+      }
+    });
+  });
+
+  document.addEventListener("click", function () {
+    if (window.innerWidth <= 1241) {
+      document.querySelectorAll(".tooltiptextAboutUs").forEach((tooltip) => {
+        tooltip.style.opacity = "0";
+        tooltip.style.visibility = "hidden";
+      });
+    }
+  });
 });
