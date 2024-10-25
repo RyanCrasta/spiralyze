@@ -24,6 +24,55 @@ body {
   font-size: 0.875rem;
 }
 
+.outlineText,
+.weText {
+  font-family: sans-serif;
+}
+
+#videoPopup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow: hidden; /* Prevent scrolling when popup is visible */
+  padding: 0 1rem;
+}
+
+/* Video player styling for desktop */
+#videoPlayer {
+  /* width: 80%;  */
+  max-width: 800px;
+  background-color: #000;
+  border-radius: 8px; /* Rounded corners for aesthetic */
+}
+
+/* Close button styling */
+#closePopup {
+  position: absolute;
+  top: 20px; /* Add spacing from top */
+  right: 20px; /* Add spacing from right */
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  z-index: 1001; /* Ensure it appears on top of the video */
+}
+
+/* Popup content styling */
+.popupContent {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+}
+
 .allLinks {
   border-right: 1px solid #fff;
 }
@@ -36,6 +85,7 @@ body {
 .allLinks .home {
   font-weight: 700;
   color: #fff;
+  opacity: 1;
   text-decoration: underline;
 }
 
@@ -47,6 +97,7 @@ body {
 .allLinks .contact:hover {
   text-decoration: underline;
   color: #fff;
+  opacity: 1;
 }
 
 .bannerSection {
@@ -127,7 +178,8 @@ body {
 
 .rightNavLinks a {
   font-size: 14px;
-  color: #ffffffb2;
+  color: #fff;
+  opacity: 0.7;
   text-transform: uppercase;
   font-weight: 400;
 }
@@ -520,7 +572,7 @@ body {
   border-color: transparent transparent #ff7777 transparent;
 }
 
-.btnCtn:hover .tooltiptextAboutUs {
+.btnCtn:hover > .tooltiptextAboutUs {
   opacity: 1;
 }
 
@@ -539,6 +591,12 @@ body {
 .secondHalfVideoSection {
   width: 50%;
   height: 100%;
+}
+
+.posterImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .firstHalfVideoSection {
@@ -923,10 +981,16 @@ body {
   cursor: pointer;
   margin: 0 auto;
   margin-top: 1.5rem;
+  box-shadow: 0px 4px 6px 0px #00000014;
+}
+
+.submitButton:hover {
+  box-shadow: 0px 8px 6px 0px #00000014;
 }
 
 .submitButton:active {
   background-color: #35bb9c;
+  box-shadow: 0px 4px 6px 0px #00000014;
 }
 
 .secondaryCTA {
@@ -942,6 +1006,15 @@ body {
   margin-top: 0.6rem;
   cursor: pointer;
   border-radius: 4px;
+  box-shadow: 0px 4px 6px 0px #00000014;
+}
+
+.secondaryCTA:hover {
+  box-shadow: 0px 8px 6px 0px #00000014;
+}
+
+.secondaryCTA:active {
+  box-shadow: 0px 4px 6px 0px #00000014;
 }
 
 .footerSectionLinks {
@@ -1042,6 +1115,25 @@ body {
 }
 
 @media only screen and (max-width: 1241px) {
+  .btnCtn:hover > .tooltiptextAboutUs {
+    opacity: 0;
+  }
+
+  #videoPlayer {
+    width: 100%; /* Slightly smaller width for tablets */
+    max-width: 600px; /* Max width for tablets */
+  }
+
+  /* #videoPlayer {
+    width: 100%;
+    max-width: 100%;
+  } */
+
+  #closePopup {
+    top: 10px;
+    right: 10px;
+  }
+
   .personImage {
     object-fit: cover;
   }
