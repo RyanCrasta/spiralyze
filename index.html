@@ -170,7 +170,7 @@
         <img class="whiteCurveMobile" src="./images/whiteMobileCurve1.svg" />
       </div>
 
-     <div class="lowerHomeSection">
+      <div class="lowerHomeSection">
         <div class="imagesCtn">
           <img src="./images/old-couple-man-women-1.png" />
 
@@ -240,7 +240,7 @@
       </div>
     </div>
 
-     <div class="secondSection">
+    <div class="secondSection">
       <div class="allCarousel">
         <div class="sliderContainer">
           <svg
@@ -569,9 +569,9 @@
       </div>
 
       <div class="aboutUsButtons">
-        <div class="btnCtn sameBtn">
-          <div>
-            <p>Needs Assessment</p>
+        <div class="btnCtn sameBtn uid-one">
+          <div class="uid-one">
+            <p class="uid-one">Needs Assessment</p>
           </div>
 
           <div class="tooltiptextAboutUs">
@@ -579,11 +579,12 @@
             personalized intervention plans
           </div>
         </div>
-        <div class="btnCtn">
+        <div class="btnCtn uid-two">
           <div class="differentBtn">
             <p>Treatment Planning &</p>
-
-
+            <div class="placement">
+              <p>placement</p>
+            </div>
           </div>
 
           <div class="tooltiptextAboutUs">
@@ -591,7 +592,7 @@
             adjustments as their needs evolve over time.
           </div>
         </div>
-        <div class="btnCtn sameBtn">
+        <div class="btnCtn sameBtn uid-three">
           <div>
             <p>Transportation & Logistics</p>
           </div>
@@ -601,7 +602,7 @@
             opportunities to participate in social networks
           </div>
         </div>
-        <div class="btnCtn sameBtn">
+        <div class="btnCtn sameBtn uid-four">
           <div>
             <p>Insurance Advocacy</p>
           </div>
@@ -611,7 +612,7 @@
             one of our roles impacts your plan holistically.
           </div>
         </div>
-        <div class="btnCtn sameBtn">
+        <div class="btnCtn sameBtn uid-five">
           <div>
             <p>Employment Advocacy</p>
           </div>
@@ -621,7 +622,7 @@
             active, socially connected to their communities.
           </div>
         </div>
-        <div class="btnCtn sameBtn">
+        <div class="btnCtn sameBtn uid-six">
           <div>
             <p>Aftercare Planning</p>
           </div>
@@ -684,18 +685,7 @@
       </div>
 
       <div class="secondHalfVideoSection">
-        <video
-          id="myVideo"
-          poster="./images/runStart.png"
-          loop
-          muted
-        >
-          <source
-            src="./images/runningVideo.mp4"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
+        <img class="posterImg" src="./images/friendsGroup.png" />
       </div>
 
       <div class="play-button" id="playButton">
@@ -754,7 +744,6 @@
         </div>
       </div>
 
-
       <div class="insidefirstHalfDarkVideoSection">
         <div class="videoWatch">
           <span class="outlineText">watch</span>
@@ -802,18 +791,7 @@
       </div>
 
       <div class="secondHalfVideoSection">
-        <video
-          id="myVideoMobile"
-          poster="./images/runStart.png"
-          loop
-          muted
-        >
-          <source
-            src="./images/runningVideo.mp4"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
+        <img class="posterImg" src="./images/friendsGroup.png" />
 
         <img class="videoLogo" src="./images/logo.png" />
 
@@ -859,6 +837,14 @@
       </div>
     </div>
 
+    <div id="videoPopup" class="popup">
+      <div class="popup-content">
+        <span id="closePopup" class="close-btn">&times;</span>
+        <video id="videoPlayer" width="600" loop muted>
+          <source src="./images/runningVideo.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
     </div>
 
     <script src="./script.js"></script>
